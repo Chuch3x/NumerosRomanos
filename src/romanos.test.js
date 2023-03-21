@@ -1,17 +1,21 @@
 function convertir_a_romano(num){
-    if(num == 1){
-        return "I";
+    var romano=["I", "IV","V","X","XL","XC","C"];
+    var numeros=[1, 4,5,10,40,90,100];
+    var i=numeros.length;
+    var texto="";
+    while(num > 0)
+    {
+        if(numeros[i]<=num)
+        {
+          texto+=romano[i];
+          num=num-numeros[i];
+        }
+        else
+        {
+          i--;
+        }
     }
-    else if(num == 2){
-        return "II";
-    }
-    else if(num == 3){
-        return "III";
-    }
-    else{
-        return "V";
-    }
-    
+      return texto;
 }
 
 
